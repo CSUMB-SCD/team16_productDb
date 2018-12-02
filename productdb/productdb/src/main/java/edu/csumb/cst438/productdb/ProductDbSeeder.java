@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 
 import edu.csumb.cst438.productdb.entities.Description;
 import edu.csumb.cst438.productdb.entities.Image;
-import edu.csumb.cst438.productdb.entities.Price;
 import edu.csumb.cst438.productdb.entities.Product;
 
 @Component
