@@ -12,7 +12,7 @@ public interface ProductRepository extends MongoRepository<Product, String>{
     @Query (value = "{'name':?0}")   
     Product findName(String name);
 
-    @Query (value = "{'price':?0}")   
-    Product findPrice(double name);
+    @Query (value = "{'payment':?0}")   
+    Product findPrice(double payment);
  
 }

@@ -1,9 +1,7 @@
 package edu.csumb.cst438.productdb.entities;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Product {
-    private String price;
     private Description description;
     private String id;
     private Image image;
@@ -12,9 +10,8 @@ public class Product {
     private double payment;
 
 
-    public Product(Image image,String name,Description description,String price, int stockNum, double payment){
+    public Product(Image image,String name,Description description, int stockNum, double payment){
         this.description = description;
-        this.price = price;
         this.image = image;
         this.stockNum = stockNum;
         this.name = name;
@@ -58,11 +55,6 @@ public class Product {
     public void setDescription(Description description) {
         this.description =description;
     }
-
-    @JsonProperty
-    public void setPrice(String price) {
-        this.price = price;
-    }
  
     public void setImage(Image image) {
         this.image = image;
@@ -70,11 +62,6 @@ public class Product {
     
     public Description getDescription(){
         return this.description;
-    }
-
-    @JsonProperty
-    public String getPrice(String price){
-        return this.price;
     }
   
     public Image getImage() {
