@@ -1,7 +1,7 @@
 package edu.csumb.cst438.productdb.entities;
 
 public class Product{
-    private double price;
+    private String price;
     private Description description;
     private String id;
     private Image image;
@@ -9,7 +9,7 @@ public class Product{
     private String name;
 
 
-    public Product(Image image,String name,Description description,double price, int stockNum){
+    public Product(Image image,String name,Description description,String price, int stockNum){
         this.description = description;
         this.price = price;
         this.image = image;
@@ -41,7 +41,7 @@ public class Product{
         this.description =description;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
  
@@ -53,7 +53,7 @@ public class Product{
         return this.description;
     }
 
-    public double getPrice(double price){
+    public String getPrice(String price){
         return this.price;
     }
   
