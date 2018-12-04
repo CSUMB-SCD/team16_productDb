@@ -71,4 +71,5 @@ public class Product {
     public int getStockNum() {
         return this.stockNum;
     }
+
 }

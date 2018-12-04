@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.csumb.cst438.productdb.ProductRepository;
@@ -35,8 +36,17 @@ public class ProductController{
     public Product getProductId (@PathVariable String id) {
         Product result = productRepo.findId(id);
         return result;
-    }
+    }   
 
-    
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping("/productid/{id}/{num}")
+    public void updateStock (@PathVariable String id, int num) {
+        Product result = productRepo.findId(id);
+        
+        if (result != null) {
+			result.setStockNum(num);
+			productRepo.save(result);
+		}
+    } 
 
 }
