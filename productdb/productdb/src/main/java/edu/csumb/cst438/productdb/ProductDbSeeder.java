@@ -13,7 +13,7 @@ import edu.csumb.cst438.productdb.entities.Product;
 
 @Component
 public class ProductDbSeeder implements CommandLineRunner{
-   
+   @Autowired
     ProductRepository productRepo;
     @Override
     public void run(String... args) throws Exception {
