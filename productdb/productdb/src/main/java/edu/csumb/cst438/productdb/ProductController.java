@@ -38,15 +38,15 @@ public class ProductController {
         return result;
     }   
 
-    // @CrossOrigin(origins = "http://localhost:4200")
-    // @GetMapping("/productid/{id}/{num}")
-    // public void updateStock (@PathVariable String id, int num) {
-    //     Product result = productRepo.findId(id);
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping("/productid/{id}/{num}")
+    public void updateStock (@PathVariable String id, int num) {
+        Product result = productRepo.findId(id);
         
-    //     if (result != null) {
-	// 		result.setStockNum(num);
-	// 		productRepo.save(result);
-	// 	}
-    // } 
+        if (result != null) {
+			result.setStockNum(num);
+			productRepo.save(result);
+		}
+    } 
 
 }
