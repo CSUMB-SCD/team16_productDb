@@ -17,28 +17,29 @@ public class ProductController {
     @Autowired
     ProductRepository productRepo;
 
-    @CrossOrigin(origins = "https://otterbuy.herokuapp.com")
+    @CrossOrigin(origins = {"https://otterbuy.herokuapp.com","http://localhost:4200"})
+  //@CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/products")
     public List<Product> getAll(){
         List<Product> result = productRepo.findAll();
         return result;
     }
-
-    @CrossOrigin(origins = "https://otterbuy.herokuapp.com")
+    @CrossOrigin(origins = {"https://otterbuy.herokuapp.com","http://localhost:4200"})
+   // @CrossOrigin(origins = "https://otterbuy.herokuapp.com")
     @GetMapping("/productName/{name}")
     public Product getProductName (@PathVariable String name) {
        Product result = productRepo.findName(name);
         return result;
     }
-
-    @CrossOrigin(origins = "https://otterbuy.herokuapp.com")
+    @CrossOrigin(origins = {"https://otterbuy.herokuapp.com","http://localhost:4200"})
+  // @CrossOrigin(origins = "https://otterbuy.herokuapp.com")
     @GetMapping("/productid/{id}")
     public Product getProductId (@PathVariable String id) {
         Product result = productRepo.findId(id);
         return result;
     }   
-
-    @CrossOrigin(origins = "https://otterbuy.herokuapp.com")
+    @CrossOrigin(origins = {"https://otterbuy.herokuapp.com","http://localhost:4200"})
+ // @CrossOrigin(origins = "https://otterbuy.herokuapp.com")
     @GetMapping("/productid/{id}/{num}")
     public void updateStock (@PathVariable String id, int num) {
         Product result = productRepo.findId(id);
